@@ -1,14 +1,24 @@
 *{margin: 0;padding:0;}
 a{text-decoration: none;}
-body{background:grey url(./wall.jpg) no-repeat center center;
+
+body{background:grey url(http://ww1.sinaimg.cn/mw690/005NYm0Bgy1fpnyc689bfj31z41404bq.jpg) no-repeat center center;
 background-size: cover;}
+header{background: #463A6C;opacity: 0.5;position: fixed;max-width: 100%;left: 0;right: 0;padding: 20px 40px;  box-shadow: 0 2px 9px 3px rgba(0, 0, 0, 0.3);}
+header>.topNavBar{max-width: 980px;text-align: center;margin: 0 auto; padding: 1px;display: flex;justify-content: space-around; align-items: center;}
+header >.topNavBar>.logo{color: #A9C3F9;font-size:25px;font-weight: 700;}
+header>.topNavBar>.searchBox{
+margin-left: 500px;
+   
+}
+header>.topNavBar>.searchBox>input{padding:5px; border-radius: 5px;}
+header>.topNavBar>.searchBox>span{margin:0 5px;vertical-align:middle;padding: 2px 10px; border-radius:2px;background: #A9C3F9;cursor: pointer;}
 main{text-align: center;display:flex;justify-content:center;align-items: center;height: 100vh;}
-#main{display: inline-block;}
-#main >div:nth-child(2){margin-left: -20px;}
-#main >div:nth-child(3){margin-left: -80px;}
-kbd{border: 1px solid red; width: 4em; height: 4em; display: inline-block; text-transform: uppercase; position: relative;}
+.wrapper{display: inline-block;}
+.wrapper >div:nth-child(2){margin-left: -20px;}
+.wrapper >div:nth-child(3){margin-left: -80px;}
+kbd{cursor: pointer;border: 1px solid red; width: 4em; height: 4em; display: inline-block; text-transform: uppercase; position: relative;}
 kbd > button{position: absolute; right: 0; bottom: 0; display: none; }
-kbd:hover > button{display: inline-block; }
+kbd:hover > button{display: block;cursor: pointer;}
 .wrapper{background:rgba(255,255,255,0.2);border-radius: 10px;}
 .key{width: 50px; height: 40px; color: #C5C5C5; background: linear-gradient(to bottom, #292929 0%,#111111 100%); box-shadow:0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 3px 0 2px #080808; border-radius: 6px; font-family: Helvetica; font-size: 14px; border:none;position:  relative;}
 .row{margin: 16px;}
