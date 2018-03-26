@@ -6,6 +6,9 @@ var hash = hashA['hash']
 generateKeyboard(keys, hash)
 //3.监听用户动作
 listenToUser(hash)
+listenToInput()
+// search()
+searchQuestion()
 function getFromLocalStorage(name){
     return JSON.parse(localStorage.getItem('name'||'null'))
 }
@@ -57,6 +60,7 @@ function createImage(domain){
     }
     return img
 }
+//初始化
 function init(){
     var keys ={
         '0': {0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
@@ -78,6 +82,7 @@ function init(){
             "hash": hash
     }
 }
+//生成键盘
 function generateKeyboard(keys, hash){
      //遍历keys,生成kbd标签
     for(var i=0;i < keys['length'];i++){
@@ -100,32 +105,49 @@ function generateKeyboard(keys, hash){
     }
 }
 function listenToUser(hash){
-    document.onkeydown = function(e){
-        isAltKey = e.keyCode > 64 && e.keyCode < 91===true
-        if(isAltKey){
+    document.onkeypress = function(e){
             var key = e.key //获取键值
             var website = hash[key]
-            if (!website) {
-                alert('还没有添加网址，请点击键盘上的字母的E添加。')
-                return
-            }
-            //location.herf = 'http://'+website
             window.open('http://'+website,'_blank')
         }
 
-    }
+    // }
 }
-  //*****************搜索功能
-var search = document.querySelectorAll(".search");
-var content = document.querySelector(".content");
-content.addEventListener("focus",function(){
+//*****************搜索功能
+    function listenToInput(){
+        var input = document.getElementById('content')
+        input.onkeypress = function(e){
+            //监听回车按钮搜索
+            if(e.charCode === 13){
+                    var content = document.getElementById('content').value
+                    var question = 'https://www.baidu.com/s?tn=99006304_1_oem_dg&isource=infinity&wd=' + content
+                    window.open(question,'_blank')
+                }else{
+                    e.stopPropagation()
+            }
+        }
+    }
+    
+    //用户点击搜索
+    function searchQuestion(){	
+        //使用百度搜索		
+        function searchByBaidu(){
+            var clickBaidu = document.getElementById('btnBaidu')
+            clickBaidu.onclick = function(e){
+                var content = document.getElementById('content').value
+                open("http://www.baidu.com/s?wd=" + content, "_blank");
+                 }
+            }
+            //使用谷歌搜索
+        function searchByGoogle(){
+                var clickGoogle = document.getElementById('btnGoogle')
+                clickGoogle.onclick = function(e){
+                    var content = document.getElementById('content').value
+                    var question = 'https://www.google.com/search?q=' + content
+                    window.open(question,'_blank')		
+                }
+            }
+        searchByBaidu()
+        searchByGoogle()
+    }
 
-})
-search[0].addEventListener("click", function() {
-    open("http://www.google.com/search?q=" + content.value, "_blank")
-})
-search[1].addEventListener("click", function() {
-   
-    open("http://www.baidu.com/s?wd=" + content.value, "_blank");
-})
-  

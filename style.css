@@ -17,6 +17,7 @@ main{text-align: center;display:flex;justify-content:center;align-items: center;
 .wrapper >div:nth-child(2){margin-left: -20px;}
 .wrapper >div:nth-child(3){margin-left: -80px;}
 kbd{cursor: pointer;border: 1px solid red; width: 4em; height: 4em; display: inline-block; text-transform: uppercase; position: relative;}
+kbd:hover{transform: scale(0.9);transition: all in .3s;}
 kbd > button{position: absolute; right: 0; bottom: 0; display: none; }
 kbd:hover > button{display: block;cursor: pointer;}
 .wrapper{background:rgba(255,255,255,0.2);border-radius: 10px;}
