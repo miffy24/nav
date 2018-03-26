@@ -1,5 +1,5 @@
 # 导航
-[预览链接](https://miffy24.github.io/nav-demo/index.html)
+[预览链接](https://miffy24.github.io/nav/index.html)
 ## 主要功能
 1. 键盘按键电脑键的a-z,可以去对应的网址。
 2. hover按钮显示E，编辑功能，编辑跳转网址。
