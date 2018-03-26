@@ -13,4 +13,4 @@
     - 监听input事件
 
 ## 效果图
-[](http://ww1.sinaimg.cn/large/005NYm0Bgy1fppyciibtij311n0hkwzr.jpg)
+![效果图](https://i.loli.net/2018/03/26/5ab84f1321904.png)
